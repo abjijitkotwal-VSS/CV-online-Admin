@@ -1,0 +1,12 @@
+.mySelect md-select-menu {
+    margin-top: 45px;
+  }
+
+
+  .readonly-wrapper {
+    cursor: not-allowed;
+}
+
+.readonly-wrapper .readonly-block {
+    pointer-events: none;
+}

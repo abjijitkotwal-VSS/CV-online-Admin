@@ -1,0 +1,110 @@
+<mat-card class="p-0">
+  <mat-card-title class="">
+    <div class="card-title-text">Role Page Mapping</div>
+    <mat-divider></mat-divider>
+  </mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="itemForm">
+      <div fxLayout="row wrap">
+        <div fxFlex="100" fxFlex.gt-xs="50" class="pr-1">
+          <div class="pb-1">
+            <mat-form-field class="full-width">
+
+              <mat-label>Select Role</mat-label>
+              <mat-select [disabled]="RoleTypeDisabled" class="readonly-block readonly-wrapper"
+                [disableOptionCentering]="true"
+                [formControl]="itemForm.controls['role_id']">
+                <mat-option *ngFor="let type of RoleType" [value]="type.role_id"> {{type.role_name}}</mat-option>
+
+              </mat-select>
+
+            </mat-form-field>
+
+
+
+
+          </div>
+        </div>
+
+        <div fxFlex="100" fxFlex.gt-xs="50">
+          <div class="pb-1"  >
+            <mat-form-field class="full-width">
+              <input matInput name="Position"   [formControl]="itemForm.controls['Positionname']"
+                placeholder="Position" >
+            </mat-form-field>
+
+
+          
+          </div>
+
+
+        </div>
+        <div fxFlex="100" fxFlex.gt-xs="30">
+          <div class="pb-1"  >
+            <button *ngIf="btnSave" mat-raised-button color="primary" (click)="save()" >Add</button>
+            <button *ngIf="btnSave" mat-raised-button color="primary" (click)="save()" >Add</button>
+
+
+          
+          </div>
+
+
+        </div>
+      </div>
+
+      <div  fxLayout="row wrap">
+        <ngx-datatable style="width: 100%"
+        class="material ml-0 mr-0"
+        [rows]="rows"
+        [columnMode]="'force'"
+        [headerHeight]="50"
+        [footerHeight]="50"
+        [scrollbarH]="true"
+        [limit]="10000"
+        
+        [rowHeight]="50"
+      
+      
+        
+        >
+
+      
+
+
+
+       
+
+       
+      
+        <ngx-datatable-column name="Role" [flexGrow]="1">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            {{ row?.Role }}
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Position" [flexGrow]="1">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            {{ row?.Position }}
+          </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column  name="Status" >
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            {{ row?.Status }}
+          </ng-template>
+        </ngx-datatable-column >
+
+        <ngx-datatable-column name="Actions" [flexGrow]="1">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            <button mat-icon-button mat-sm-button color="primary" class="mr-1" (click)="Edit(row)">Edit</button>
+            <button mat-icon-button mat-sm-button color="warn" (click)="deleteItem(row)">Delete</button>
+          </ng-template>
+        </ngx-datatable-column>
+       
+      </ngx-datatable>
+          
+        </div>
+      
+
+    </form>
+  </mat-card-content>
+</mat-card>

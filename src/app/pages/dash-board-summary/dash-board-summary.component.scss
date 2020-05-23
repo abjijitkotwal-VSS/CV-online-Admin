@@ -1,0 +1,103 @@
+// .ngx-datatable.material .datatable-body .datatable-body-row .datatable-body-cell {
+// padding: 3px;
+// }
+
+
+//  .mat-header-cell {
+  
+//   background-color: #6168e7;
+//   color: antiquewhite;
+  
+// }
+
+
+  // app-child .mat-tab-label.mat-tab-label-active {
+  //   padding: 0px 15px ;
+  // justify-content: flex-start;
+  // }
+
+  // app-child .mat-tab-label{
+  //   padding: 0px 15px ;
+  // justify-content: flex-start;
+  // }
+
+// .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
+//     background:#6168e7;
+//   }
+
+md-card.md-default-theme .md-card-image, md-card .md-card-image {
+  border-radius: 2px 2px 0 0;
+}
+
+
+// .MatDesign
+// {border: ridge;
+//   box-shadow: blue;
+
+// }
+
+.shadowClass
+{
+  box-shadow: 0 0 10px 0px #0e1068;
+}
+.chart-container {
+  width: 530px !important;
+  height:300px !important
+}
+
+.chart-container1 {
+  width: 530px !important;
+  height:260px !important
+}
+
+
+.textFont{
+
+  font-weight: bolder;
+  color: #0e1068 !important;
+}
+
+
+//First column and header
+// .mat-header-cell:first-child,.mat-cell:first-child{
+//   flex:2%;
+// }
+// //Second column and header
+// .mat-header-cell:nth-child(2),.mat-cell:nth-child(2){
+//   flex:2%;
+// }
+// //Last column and header
+// .mat-header-cell:last-child,.mat-cell:last-child{
+//   flex:10%
+// }
+
+
+.mat-column-Status {
+  flex: 0 0 20%;
+}
+.mat-column-NoOforder {
+  flex: 0 0 17%;
+}
+.mat-column-OrderPerCentage {
+  flex: 0 0 13%;
+}
+.mat-column-OrderValue {
+  flex: 0 0 25%;
+}
+.mat-column-OrderValuePercentage {
+  flex: 0 0 20%;
+}
+
+
+
+
+
+
+// .mat-column-OrderPerCentage {
+//   flex: 0 0 3%;
+// }
+
+
+
+
+   

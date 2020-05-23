@@ -1,0 +1,377 @@
+<div fxLayout="row wrap" [@animate]="{value:'*',params:{delay:'600ms',scale:'.9'}}">
+  <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.sm="50">
+    <mat-card style="box-shadow: 0 0 10px 0px #0e1068;" class="rounded-circle" fxLayout="inherit"
+      fxLayoutAlign="start center">
+      <img class="avatar-md rounded-circle" src="./assets/images/DashboardIcon/V3/out for delivery green.png" alt="">
+      <span style="width: 20px"></span>
+      <div>
+        <p class="textFont m-0 text-13  line-height-1">Total orders</p>
+  
+       
+        <span class="text-16 font-weight-bold text-blue">{{TotalCount}}</span><br>
+      <span class="text-16 font-weight-bold text-blue"> {{currency}}{{TotalValue | number}}</span>
+      <!-- <a style="color: red; position: fixed" >*</a> -->
+      </div>
+    </mat-card>
+  </div>
+  <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.sm="50">
+    <mat-card class="rounded-circle " style="box-shadow: 0 0 10px 0px #0e1068;" fxLayout="inherit"
+      fxLayoutAlign="start center">
+      <img class="avatar-md rounded-circle" src="./assets/images/DashboardIcon/V3/out for delivery green.png" alt="">
+      <span style="width: 20px"></span>
+      <div>
+        <p class="textFont m-0 text-13  line-height-1">Pending</p>
+        <span  style="color: #ff3300;" class="text-16 font-weight-bold text-blue"> {{PendingCount}}</span><br>
+      
+        <span style="color: #ff3300;" class="text-16 font-weight-bold text-blue">{{currency}}{{PendingValue| number}}</span>
+        <!-- <a style="color: red; position: fixed" >*</a> -->
+      </div>
+    </mat-card>
+  </div>
+  <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.sm="50">
+    <mat-card style="box-shadow: 0 0 10px 0px #0e1068;" class="rounded-circle" fxLayout="inherit"
+      fxLayoutAlign="start center">
+      <img class="avatar-md rounded-circle" src="./assets/images/DashboardIcon/V3/order packed green.png" alt="">
+      <span style="width: 20px"></span>
+      <div>
+        <p  class=" textFont m-0 text-13  line-height-1">Invoiced</p>
+        <span style="color: #00bfff;" class="text-16 font-weight-bold text-blue">{{InvoiceCount}} </span><br>
+         <span style="color: #00bfff;" class="text-16 font-weight-bold text-blue">{{currency}}{{Invoicedvalue| number}}</span>
+         <!-- <a style="color: red; position: fixed" >*</a> -->
+      </div>
+    </mat-card>
+  </div>
+
+
+
+  <!-- <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.sm="50">
+    <mat-card style="box-shadow: 0 0 10px 0px #0e1068;" class="rounded-circle" fxLayout="inherit"
+      fxLayoutAlign="start center">
+      <img class="avatar-md rounded-circle" src="./assets/images/DashboardIcon/V3/out for delivery green.png" alt="">
+      <span style="width: 20px"></span>
+      <div>
+        <p  class=" textFont m-0 text-13  line-height-1">Out For Delivery</p>
+        <span style="color: #FF7F00;" class="text-16 font-weight-bold text-blue">{{OutForDeliveryCount}} </span><br>
+         <span style="color: #FF7F00;" class="text-16 font-weight-bold text-blue">{{currency}}{{OutForDeliveryValue| number}}</span>
+         <a style="color: red; position: fixed">*</a>
+      </div>
+    </mat-card>
+  </div> -->
+
+
+  <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.sm="50">
+    <mat-card style="box-shadow: 0 0 10px 0px #0e1068;" class="rounded-circle" fxLayout="inherit"
+      fxLayoutAlign="start center">
+      <img class="avatar-md rounded-circle" src="./assets/images/DashboardIcon/V3/out for delivery green.png" alt="">
+      <span style="width: 20px"></span>
+      <div>
+        <p  class=" textFont m-0 text-13  line-height-1">Out For Delivery</p>
+        <span  style="color: #FF7F00;" class="text-16 font-weight-bold text-blue">{{OutForDeliveryCount}} </span><br>
+         <span style="color: #FF7F00;" class="text-16 font-weight-bold text-blue"> {{currency}}{{OutForDeliveryValue| number}}</span>
+         <!-- <a style="color: red; position: fixed" >*</a> -->
+      </div>
+    </mat-card>
+  </div>
+
+
+  <!-- <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.sm="50">
+    <mat-card style="box-shadow: 0 0 10px 0px #0e1068;" class="rounded-circle" fxLayout="inherit"
+      fxLayoutAlign="start center">
+      <img class="avatar-md rounded-circle" src="./assets/images/DashboardIcon/V3/out for delivery green.png" alt="">
+      <span style="width: 20px"></span>
+      <div>
+        <p  class=" textFont m-0 text-16  line-height-1">Out For Delivery</p>
+        <span class="text-18 font-weight-bold text-blue">{{OutForDeliveryCount}} </span>
+      </div>
+    </mat-card>
+  </div> -->
+
+
+
+  <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.sm="50">
+    <mat-card style="box-shadow: 0 0 10px 0px #0e1068;" class="rounded-circle" fxLayout="inherit"
+      fxLayoutAlign="start center">
+      <img class="avatar-md rounded-circle" src="./assets/images/DashboardIcon/V3/out for delivery green.png" alt="">
+      <span style="width: 20px"></span>
+      <div>
+        <p  class=" textFont m-0 text-13  line-height-1">Delivered</p>
+        <span  style="color: #39f200;" class="text-16 font-weight-bold text-blue">{{DeliveredCount}} </span><br>
+         <span style="color: #39f200;" class="text-16 font-weight-bold text-blue"> {{currency}}{{DeleiveryValue| number}}</span>
+         <!-- <a style="color: red; position: fixed" >*</a> -->
+      </div>
+    </mat-card>
+  </div>
+
+
+
+  <!-- <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.sm="50">
+    <mat-card style="box-shadow: 0 0 10px 0px #0e1068;" class="rounded-circle" fxLayout="row wrap"
+      fxLayoutAlign="start center">
+      <img class="avatar-md rounded-circle" src="./assets/images/DashboardIcon/V3/out for delivery green.png" alt="">
+      <span style="width: 20px"></span>
+      <div>
+        <p class=" textFont m-0 text-16  line-height-1">Out For Delivery</p>
+        <span class="text-18 font-weight-bold text-blue">{{OutForDeliveryCount}} </span>
+      </div>
+    </mat-card>
+  </div> -->
+
+
+
+
+
+
+ 
+  <!-- <div fxFlex="100" fxFlex.gt-sm="16.66" fxFlex.sm="50" >
+    <mat-card class="rounded-circle" fxLayout="row wrap" fxLayoutAlign="start center">
+      <img class="avatar-md rounded-circle" src="assets/images/DashboardIcon/V3/out for delivery green.png" alt="">
+      <span style="width: 20px"></span>
+      <div>
+        <p class="m-0 text-14 text-muted line-height-1">Cancel</p>
+        <span class="text-18 font-weight-bold text-blue">80 </span>
+      </div>
+    </mat-card>
+  </div> -->
+</div>
+
+<a  style=" margin-top:25px; color: #0e1068; font-weight: bold; cursor: default !important;" [innerHtml]="FilterString"></a>
+<div style="margin-top:5px;" fxLayout="row wrap">
+  <!-- *ngFor="let user of users"  -->
+  <div fxFlex="100" fxFlex.gt-sm="50">
+    <mat-card class="user-card p-0">
+      <mat-card-title class="mat-bg-primary">
+        <div class="card-title-text">
+          
+          <span>ORDER STATUS SUMMARY</span>
+          <span fxFlex></span>
+          
+          <span  >  <a    [innerHtml]="SummaryStraing"></a></span>
+
+        </div>
+        <mat-divider></mat-divider>
+      </mat-card-title>
+      <mat-card-content style="padding: 0%;">
+        <!-- user detail lines-->
+        <div class="user-details">
+          <mat-table [dataSource]="StatusSumarry" matSort>
+
+
+            <ng-container  matColumnDef="Status">
+              <mat-header-cell style="  justify-content: left; font-size: inherit; font-weight: bolder; color: #0e1068 !important;"  *matHeaderCellDef mat-sort-header>
+                Status
+              </mat-header-cell>
+              <mat-cell  style=" text-align: -webkit-center; justify-content: left;"class="textFont" *matCellDef="let row" data-label="progress">
+                {{ row.Status }}
+              </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="NoOforder">
+              <mat-header-cell style=" place-content: center;  font-size: inherit; font-weight: bolder; color: #0e1068 !important;"  *matHeaderCellDef mat-sort-header>
+                No. Of Orders
+              </mat-header-cell>
+              <mat-cell style="place-content: center;" *matCellDef="let row" data-label="name">
+                {{ row.NoOforder }}
+              </mat-cell>
+            </ng-container>
+
+
+
+            <ng-container matColumnDef="OrderPerCentage">
+              <mat-header-cell  style=" place-content: flex-end; font-size: inherit; font-weight: bolder; color: #0e1068 !important;"  *matHeaderCellDef mat-sort-header>
+                {{Percentage}} Order
+              </mat-header-cell>
+              <mat-cell  style="    justify-content: flex-end" *matCellDef="let row" data-label="name">
+                {{ row.OrderPerCentage }}{{Percentage}}
+              </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="OrderValue">
+              <mat-header-cell style=" place-content: flex-end; font-size: inherit; font-weight: bolder; color: #0e1068 !important;"  *matHeaderCellDef mat-sort-header>
+                <!-- <a style="color: red; font-weight: bold;"> *</a> -->
+                Order Amount
+              </mat-header-cell>
+              <mat-cell style="    justify-content: flex-end" *matCellDef="let row" data-label="color">
+                <!-- {{currency}}{{ row.OrderValue }}<br> -->
+                <!-- {{currency}} -->
+                {{currency}} {{ row.orderValueinThous | number }}
+              </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="OrderValuePercentage">
+              <mat-header-cell style="  place-content: flex-end; font-size: inherit; font-weight: bolder; color: #0e1068 !important;"  *matHeaderCellDef mat-sort-header>
+                {{Percentage}}Order Amount
+              </mat-header-cell>
+              <mat-cell style="place-content: flex-end;" *matCellDef="let row" data-label="color">
+                {{ row.OrderValuePercentage }} {{Percentage}}
+              </mat-cell>
+            </ng-container>
+
+            <!-- <ng-container matColumnDef="action">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Action </mat-header-cell>
+                <mat-cell *matCellDef="let row"> 
+                  <button mat-button><mat-icon>keyboard_arrow_right</mat-icon></button>
+                </mat-cell>
+              </ng-container> -->
+
+            <mat-header-row class="textFont" *matHeaderRowDef="[
+                'Status',
+                'NoOforder',
+                'OrderPerCentage',
+                'OrderValue',
+                'OrderValuePercentage'
+              ]"></mat-header-row>
+            <mat-row class="textFont" *matRowDef="
+                let row;
+                columns: [
+                  'Status',
+                  'NoOforder',
+                  'OrderPerCentage',
+                  'OrderValue',
+                  'OrderValuePercentage'
+                ]
+              ">
+            </mat-row>
+          </mat-table>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="user-card p-0">
+      <mat-card-title class="mat-bg-primary">
+        <div class="card-title-text">
+         
+          <span>ORDER STATUS AGING </span>
+          <span fxFlex></span>
+          
+
+        </div>
+        <mat-divider></mat-divider>
+      </mat-card-title>
+      <mat-card-content style="padding: 0%;">
+        <!-- user detail lines-->
+        <div class="user-details">
+          <mat-table [dataSource]="StatusAgig" matSort>
+
+
+            <ng-container matColumnDef="Status1">
+              <mat-header-cell style="   justify-content: left; font-size: inherit; font-weight: bolder; color: #0e1068 !important;"  *matHeaderCellDef mat-sort-header>
+                Status
+              </mat-header-cell>
+              <mat-cell style="justify-content: left;" class="textFont" *matCellDef="let row" data-label="progress">
+                {{ row.Status }}
+              </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="Eight">
+              <mat-header-cell  style=" place-content: center; font-size: inherit; font-weight: bolder; color: #0e1068 !important;" *matHeaderCellDef mat-sort-header>
+                0-8 Hr.
+              </mat-header-cell>
+              <mat-cell style="place-content: center;" *matCellDef="let row" data-label="name">
+                {{ row?.a }}
+              </mat-cell>
+            </ng-container>
+
+
+
+            <ng-container matColumnDef="Sixteen">
+              <mat-header-cell style=" place-content: center; font-size: inherit; font-weight: bolder; color: #0e1068 !important;"  *matHeaderCellDef mat-sort-header>
+                8-16 Hr.
+              </mat-header-cell>
+              <mat-cell style="place-content: center;" *matCellDef="let row" data-label="name">
+                {{ row.b }}
+              </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="Tfour">
+              <mat-header-cell style=" place-content: center; font-size: inherit; font-weight: bolder; color: #0e1068 !important;"  *matHeaderCellDef mat-sort-header>
+                16-24 Hr.
+              </mat-header-cell>
+              <mat-cell style="place-content: center;" *matCellDef="let row" data-label="color">
+                {{ row.c }}
+              </mat-cell>
+            </ng-container>
+
+
+
+
+
+            <mat-header-row class="textFont" *matHeaderRowDef="[
+                'Status1',
+                'Eight',
+                'Sixteen',
+                'Tfour'
+                
+              ]"></mat-header-row>
+            <mat-row class="textFont" *matRowDef="
+                let row;
+                columns: [
+                'Status1',
+                'Eight',
+                'Sixteen',
+                'Tfour'
+                  
+                ]
+              ">
+            </mat-row>
+          </mat-table>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+
+  <div fxFlex="100" fxFlex.gt-sm="50">
+    <mat-card style="height: 350px;" class="user-card p-0">
+      <mat-card-title class="mat-bg-primary">
+        <div class="card-title-text">
+       
+          <span>MONTHLY STATUS</span>
+          <span fxFlex></span>
+          <!-- <span>{{barchartString}}</span> -->
+          <span>  <a  [innerHtml]="barchartString"></a></span>
+        
+          
+        </div>
+        <mat-divider></mat-divider>
+      </mat-card-title>
+      <mat-card-content  style="padding-left:  1%;" >
+      
+        <div >
+          <canvas height="120%" baseChart [datasets]="barChartData" [labels]="barChartLabels"
+          [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
+          [chartType]="barChartType" [colors]="colors">
+        </canvas>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card style="height: 300px;" class="user-card p-0">
+      <mat-card-title class="mat-bg-primary">
+        <div class="card-title-text">
+         
+          <span>ORDER STATUS SLA</span>
+          <span fxFlex></span>
+        
+        </div>
+        <mat-divider></mat-divider>
+      </mat-card-title>
+      <mat-card-content style="padding-left:  1%;;">
+        <!-- user detail lines-->
+        <div class="user-details">
+          <canvas  height="120%" baseChart [datasets]="barChartData1" [labels]="barChartLabels1"
+          [options]="barChartOptions1" [plugins]="barChartPlugins1" [legend]="barChartLegend1"
+          [chartType]="barChartType1" [colors]="colors1">
+        </canvas>
+        </div>
+      </mat-card-content>
+
+
+    </mat-card>
+   
+  </div>
+  <!-- <a style="color: red; font-weight: bold;"> *Order value is in Thousand </a> -->
+  <br>
+
+
+ 
+</div>
+&nbsp;
+<!-- <p style="color: #0e1068; font-weight: bold;" [innerHtml]="FilterString"></p> -->
+<app-filter (messageEvent)="receiveMessage($event)"></app-filter>

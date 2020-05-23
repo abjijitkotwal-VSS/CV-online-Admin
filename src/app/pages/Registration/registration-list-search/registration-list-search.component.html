@@ -1,0 +1,183 @@
+<div class="handle" *ngIf="!isCustomizerOpen">
+  <button mat-fab color="primary" (click)="isCustomizerOpen = true">
+    <mat-icon title=" Advanced Search" class="spin text-white">search</mat-icon>
+  </button>
+</div>
+
+<form [formGroup]="itemForm">
+<div id="app-customizer" *ngIf="isCustomizerOpen">
+  <mat-card style="margin-top: 71px;" class="p-0">
+    <mat-card-title class="m-0 light-gray">
+      <div style="color: white; background-color: rgba(16, 23, 76, 0.96) !important;" class="card-title-text"
+        fxLayout="row wrap" fxLayoutAlign="center center">
+        <!-- <button mat-flat-button [color]="viewMode === 'options' ? 'primary':''" (click)="viewMode = 'options'">Advanced
+          Search</button> -->
+        Advanced Search
+        <span fxFlex="15px"></span>
+        <!-- <button mat-flat-button [color]="viewMode === 'json' ? 'primary':''" (click)="viewMode = 'json'">Json</button> -->
+        <span fxFlex></span>
+        <button class="card-control" mat-icon-button (click)="isCustomizerOpen = false">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </mat-card-title>
+
+
+    <mat-card-content [perfectScrollbar] *ngIf="viewMode === 'options'">
+      <p><small></small></p>
+      <div class="pb-1 mb-1 border-bottom">
+        <h6 class="title text-muted">Search By Type </h6>
+
+
+        <!-- <mat-form-field>
+          <mat-label>Type</mat-label>
+          <mat-select [formControl]="itemForm.controls['account_type']"  disableRipple>
+            <mat-option value="">All</mat-option>
+            <mat-option value="TML">TML</mat-option>
+            <mat-option value="Distributor">Distributor</mat-option>
+          </mat-select>
+        </mat-form-field> -->
+
+
+        <mat-form-field>
+          <mat-label>Select Role</mat-label>
+        
+          <mat-label>Select Role</mat-label>
+          <mat-select [disabled] = "RoleTypeDisabled" class="readonly-block readonly-wrapper"  (selectionChange)="OnselectedRole($event.value)" [disableOptionCentering]="true" [formControl]="itemForm.controls['role_id']">
+            <mat-option   *ngFor="let type of RoleType" [value]="type.role_id" > {{type.role_name}}</mat-option>
+            
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Select Position</mat-label>
+          <mat-select [disableOptionCentering]="true"      [formControl]="itemForm.controls['position_id']">
+            <mat-option  *ngFor="let Position of Position" [value]="Position.position_id" > {{Position.position_name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+
+
+
+        <mat-form-field>
+          <mat-label>Status</mat-label>
+          <mat-select [formControl]="itemForm.controls['status']"  disableRipple>
+            <mat-option value="" disableRipple>All</mat-option>
+            <mat-option value="isactive">Active</mat-option>
+            <mat-option value="Inactive">Inactive</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+        <!-- <mat-form-field>
+          <mat-label>Position</mat-label>
+          <mat-select [formControl]="itemForm.controls['position']"  disableRipple>
+            <mat-option value="" disableRipple>All</mat-option>
+            <mat-option value="Active">Active</mat-option>
+            <mat-option value="Inactive">Inactive</mat-option>
+          </mat-select>
+        </mat-form-field> -->
+
+
+      </div>
+
+
+      <!-- <div class="pb-1 mb-1 border-bottom">
+        <h6 class="title text-muted">Search By Status</h6>
+      
+
+        <mat-form-field>
+          <mat-label>Status</mat-label>
+          <mat-select disableRipple>
+            <mat-option value="1">All</mat-option>
+            <mat-option value="2">Deliverd</mat-option>
+            <mat-option value="3">Out For Delivery</mat-option>
+            <mat-option value="3">Invoiced</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </div> -->
+
+
+      <div class="pb-1 mb-1 border-bottom">
+        <h6 class="title text-muted">Search By Distributor ID</h6>
+
+        <mat-form-field class="example-form-field">
+          <input [formControl]="itemForm.controls['distributor_code']" matInput type="text" placeholder="Distributor Code" [(ngModel)]="value">
+          <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+
+      </div>
+
+
+      <div class="pb-1 mb-1 border-bottom">
+        <h6 class="title text-muted">Search By Details</h6>
+
+        <mat-form-field class="example-form-field">
+          <input [formControl]="itemForm.controls['user_name']" matInput type="text" placeholder="userName">
+          <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <mat-form-field class="example-form-field">
+          <input [formControl]="itemForm.controls['first_name']" matInput type="text" placeholder="First name">
+          <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+
+
+        <mat-form-field class="example-form-field">
+          <input [formControl]="itemForm.controls['last_name']" matInput type="text" placeholder="last name">
+          <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+
+
+      </div>
+
+
+
+      <div class="pb-1 mb-1 border-bottom">
+        <!-- <h6 class="title text-muted">Search Total By Amount</h6> -->
+        
+
+        <!-- <mat-form-field style="width: 100px;" class="example-form-field">
+          <input matInput type="text" placeholder="Min Amount" [(ngModel)]="value">
+          <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field  > -->
+<!-- &nbsp;&nbsp;
+&nbsp; &nbsp;       <mat-form-field style="width: 100px;" class="example-form-field">
+          <input matInput type="text" placeholder="Max Amount" [(ngModel)]="value">
+          <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field> -->
+
+        <button mat-raised-button (click)="Search()"  color="primary">Serach</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <button mat-raised-button (click)="reset()"  color="warn">Reset</button>
+
+      </div>
+
+
+
+
+
+
+
+      
+      <!-- <div class="pb-1 ">
+        <mat-checkbox [(ngModel)]="isRTL" (change)="toggleDir($event)">RTL</mat-checkbox>
+      </div> -->
+    </mat-card-content>
+  </mat-card>
+</div>
+</form>

@@ -1,0 +1,59 @@
+<div  class="height-100vh signup4-wrap">
+
+  <div  style="float:right;padding: 22px;"  >
+    <img  src="./assets/images/backgrounds/tml_logo.png" class="img-responsive" alt="">
+    </div>
+    
+    <div style="float:left;padding: 22px;" >
+    <img  src="./assets/images/backgrounds/Tataroupogo.png" class="img-responsive" alt="">
+    </div>
+
+    <div  fxLayout="coloum wrap" fxLayoutAlign="center center" >
+      <form   [formGroup]="signupForm" class="signup4-form grey-100 login" (ngSubmit)="onSubmit() ">
+        <span fxLayoutAlign="center center" style="color: #10174c; font-size: xx-large; ">CV Online ADMIN PORTAL</span>
+    
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>UserName</mat-label>
+            <input
+              matInput
+              formControlName="username"
+              type="text"
+              name="username"
+              placeholder="UserName"
+            />
+          </mat-form-field>
+    
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              formControlName="password"
+              type="password"
+              name="password"
+              placeholder="********"
+            />
+          </mat-form-field>
+    
+        
+        
+          <div fxLayout="row wrap" fxLayoutAlign="start center" style="width: 100%;">
+            <button style="width: 100%;" mat-flat-button color="primary">Sign In</button>
+           
+          </div>
+    
+        <!-- <div fxLayout="row wrap" fxLayoutAlign="space-between center" style="margin-top: 20px">
+            <span>or connect with </span>
+            <div>
+              icons goes here
+            </div>
+          </div> -->
+    
+      </form>
+     </div>
+
+</div>
+
+
+
+
+

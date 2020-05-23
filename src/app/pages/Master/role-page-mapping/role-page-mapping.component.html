@@ -1,0 +1,91 @@
+<mat-card class="p-0">
+  <mat-card-title class="">
+    <div class="card-title-text">Role Page Mapping</div>
+    <mat-divider></mat-divider>
+  </mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="itemForm">
+      <div fxLayout="row wrap">
+        <div fxFlex="100" fxFlex.gt-xs="50" class="pr-1">
+          <div class="pb-1">
+            <mat-form-field class="full-width">
+
+              <mat-label>Select Role</mat-label>
+              <mat-select [disabled]="RoleTypeDisabled" class="readonly-block readonly-wrapper"
+                (selectionChange)="OnselectedRole($event.value)" [disableOptionCentering]="true"
+                [formControl]="itemForm.controls['role_id']">
+                <mat-option *ngFor="let type of RoleType" [value]="type.role_id"> {{type.role_name}}</mat-option>
+
+              </mat-select>
+
+            </mat-form-field>
+
+
+
+
+          </div>
+        </div>
+
+        <div fxFlex="100" fxFlex.gt-xs="50">
+          <div class="pb-1">
+            <mat-form-field class="full-width">
+
+              <mat-label>Select Position</mat-label>
+              <mat-select (selectionChange)="OnselectedPosition($event.value)" [disableOptionCentering]="true" [formControl]="itemForm.controls['position_id']">
+                <mat-option *ngFor="let Position of Position" [value]="Position.position_id"> {{Position.position_name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+          </div>
+
+
+        </div>
+      </div>
+
+      <div *ngIf="isDisplayTable" fxLayout="row wrap">
+        <ngx-datatable style="width: 100%" class="material" [rows]="rows" [columnMode]="'force'" [headerHeight]="50"
+            [footerHeight]="50" [rowHeight]="'auto'" [limit]="100" [selected]="selected" [selectionType]="'checkbox'"
+            [selectAllRowsOnPage]="false" (select)='onInvoicedSelect($event)'  >
+  
+             <ngx-datatable-column [width]="30" [sortable]="false" [draggable]="false"
+             >
+            
+              <ng-template let-row="row"  ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                let-onCheckboxChangeFn="onCheckboxChangeFn">
+                <input type="checkbox" [checked]="row.Status" (change)="onCheckboxChangeFn($event)" />
+              </ng-template>
+            </ngx-datatable-column>
+  
+            <ngx-datatable-column  style="text-align: center;"  [draggable]="false"
+            name="Sub Menu">
+              <ng-template  let-row="row" style="text-align: center;" ngx-datatable-cell-template>
+                {{ row?.PageDetailDisplyaName }}
+               
+              </ng-template>
+            </ngx-datatable-column>
+  
+            <ngx-datatable-column style="text-align: center;" name="Main Menu">
+              <ng-template let-row="row" style="text-align: center;" ngx-datatable-cell-template>
+                {{ row?.PageMasterDisplyname }}
+              </ng-template>
+            </ngx-datatable-column>
+  
+            
+          
+  
+  
+  
+  
+  
+          </ngx-datatable>
+          <button mat-raised-button color="primary" (click)="save()" >Submit</button>
+    
+      &nbsp;&nbsp;<button mat-raised-button color="warn" (click)="oncalcel()">Cancel</button>
+
+        </div>
+      
+
+    </form>
+  </mat-card-content>
+</mat-card>

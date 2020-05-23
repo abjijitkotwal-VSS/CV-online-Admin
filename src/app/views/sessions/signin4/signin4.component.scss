@@ -1,0 +1,19 @@
+// same as _signup-4.scss
+
+
+.login
+{
+ align-items: center;
+ margin-top: 20%;
+  margin-left: 10%;
+}
+@media only screen and (max-width: 1000px) and (min-width: 350px){
+    .login
+    {
+    align-items: center;
+    margin-top: 175px;
+    margin-left: 140px;
+    padding-right: -1%;
+
+    }
+}
